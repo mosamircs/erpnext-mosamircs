@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "env/lib/python3.8/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "env/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "env/lib/python3.8/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "apps/frappe/frappe/desk/page/setup_wizard/setup_wizard.py", line 76, in setup_complete
+    task.get("fn")(task.get("args"))
+  File "apps/frappe/frappe/desk/page/setup_wizard/setup_wizard.py", line 94, in update_global_settings
+    update_user_name(args)
+  File "apps/frappe/frappe/desk/page/setup_wizard/setup_wizard.py", line 189, in update_user_name
+    doc.insert()
+  File "apps/frappe/frappe/model/document.py", line 291, in insert
+    self.run_post_save_methods()
+  File "apps/frappe/frappe/model/document.py", line 1085, in run_post_save_methods
+    self.run_method("on_update")
+  File "apps/frappe/frappe/model/document.py", line 941, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "apps/frappe/frappe/model/document.py", line 1264, in composer
+    return composed(self, method, *args, **kwargs)
+  File "apps/frappe/frappe/model/document.py", line 1246, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "apps/frappe/frappe/model/document.py", line 938, in fn
+    return method_object(*args, **kwargs)
+  File "apps/frappe/frappe/core/doctype/user/user.py", line 125, in on_update
+    frappe.enqueue(
+  File "apps/frappe/frappe/__init__.py", line 1978, in enqueue
+    return frappe.utils.background_jobs.enqueue(*args, **kwargs)
+  File "apps/frappe/frappe/utils/background_jobs.py", line 97, in enqueue
+    return q.enqueue_call(
+  File "env/lib/python3.8/site-packages/rq/queue.py", line 366, in enqueue_call
+    job = self.enqueue_job(job, at_front=at_front)
+  File "env/lib/python3.8/site-packages/rq/queue.py", line 474, in enqueue_job
+    job.save(pipeline=pipe)
+  File "env/lib/python3.8/site-packages/rq/job.py", line 610, in save
+    if self.get_redis_server_version() >= StrictVersion("4.0.0"):
+  File "env/lib/python3.8/site-packages/rq/job.py", line 618, in get_redis_server_version
+    self.redis_server_version = get_version(self.connection)
+  File "env/lib/python3.8/site-packages/rq/utils.py", line 278, in get_version
+    version_string = connection.info("server")["redis_version"]
+  File "env/lib/python3.8/site-packages/redis/client.py", line 1306, in info
+    return self.execute_command('INFO', section)
+  File "env/lib/python3.8/site-packages/redis/client.py", line 898, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "env/lib/python3.8/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "env/lib/python3.8/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:11000. Connection refused.
+{"language": "English (United States)", "country": "Saudi Arabia", "timezone": "Asia/Riyadh", "currency": "SAR", "full_name": "Mohamed Samir", "email": "msamir@sulfah.com", "password": "erpnext", "domains": ["Distribution", "Education", "Manufacturing", "Retail", "Services", "Healthcare", "Agriculture", "Non Profit"], "company_name": "Sulfah", "company_abbr": "S", "company_tagline": "fintech", "bank_account": "fintech", "chart_of_accounts": "Standard with Numbers", "fy_start_date": "2023-01-01", "fy_end_date": "2023-12-31", "name": "msamir@sulfah.com"}

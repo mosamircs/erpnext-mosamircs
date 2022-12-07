@@ -1,0 +1,15 @@
+2022-11-24 10:15:17,062 ERROR frappe New Exception collected with id: 2022-11-24 10:15:16.571220-127.0.0.1-cf3
+Site: site1.local
+Form Dict: {'chart': 'Standard with Numbers', 'parent': '1000 - Application of Funds (Assets)', 'doctype': 'Account', 'cmd': 'erpnext.accounts.utils.get_coa'}
+2022-11-24 10:15:17,064 ERROR frappe New Exception collected with id: 2022-11-24 10:15:16.249212-127.0.0.1-dd8
+Site: site1.local
+Form Dict: {'chart': 'Standard with Numbers', 'parent': '2000 - Source of Funds (Liabilities)', 'doctype': 'Account', 'cmd': 'erpnext.accounts.utils.get_coa'}
+2022-11-24 10:15:17,067 ERROR frappe New Exception collected with id: 2022-11-24 10:15:16.567985-127.0.0.1-71f
+Site: site1.local
+Form Dict: {'chart': 'Standard with Numbers', 'parent': '5000 - Expenses', 'doctype': 'Account', 'cmd': 'erpnext.accounts.utils.get_coa'}
+2022-11-24 10:15:17,067 ERROR frappe New Exception collected with id: 2022-11-24 10:15:16.547687-127.0.0.1-694
+Site: site1.local
+Form Dict: {'chart': 'Standard with Numbers', 'parent': '4000 - Income', 'doctype': 'Account', 'cmd': 'erpnext.accounts.utils.get_coa'}
+2022-11-24 10:15:17,082 ERROR frappe New Exception collected with id: 2022-11-24 10:15:16.519290-127.0.0.1-f73
+Site: site1.local
+Form Dict: {'chart': 'Standard with Numbers', 'parent': '3000 - Equity', 'doctype': 'Account', 'cmd': 'erpnext.accounts.utils.get_coa'}
